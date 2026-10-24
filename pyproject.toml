@@ -1,6 +1,6 @@
 [project]
 name = "li-chao-tree-utils"
-version = "0.1.0"
+version = "0.1.1"
 description = "Data structure for querying the maximum linear function value at any point in a fixed range."
 requires-python = ">=3.10"
 dependencies = []
