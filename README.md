@@ -31,3 +31,10 @@ The tree subdivides at integer midpoints, so query points must be integers in `[
 
 - `LiChaoTree(lo, hi, eps=1e-9)` — the tree; methods `add_line(m, b) -> Line`, `query_max(x) -> Line | None`, `query_max_value(x) -> float`.
 - `Line(m, b)` — value object with `.m`, `.b`, and `.eval(x) -> float`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
